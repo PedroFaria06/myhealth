@@ -74,9 +74,9 @@ const Navigation = () =>{
     return(
         <NavigationContainer>
             <Stack.Navigator>
-                
-                <Stack.Screen name="Editar" component={Editar} 
-                options={{headerStyle:{backgroundColor:'#C1E7E3'}, headerTitle:()=> <Mudei/> }}/>
+
+            <Stack.Screen name="CriarConta" component={CriarConta} 
+                options={{headerStyle:{backgroundColor:'#C1E7E3'}, headerTitle:()=> <Titulo />}}/>
             
                 
                 <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
@@ -84,13 +84,13 @@ const Navigation = () =>{
                 <Stack.Screen name="Home" component={Home} 
                 options={{headerStyle:{backgroundColor:'#C1E7E3'}, headerTitle:()=> <Cards />}}/>
                 
-                <Stack.Screen name="CriarConta" component={CriarConta} 
-                options={{headerStyle:{backgroundColor:'#C1E7E3'}, headerTitle:()=> <Titulo />}}/>
+                
                 
                 <Stack.Screen name="Recuperar" component={Recuperar} 
                 options={{headerStyle:{backgroundColor:'#C1E7E3'}, headerTitle:()=> <Esqueci/>, headerLeft:null }}/>
 
-                
+                <Stack.Screen name="Editar" component={Editar} 
+                options={{headerStyle:{backgroundColor:'#C1E7E3'}, headerTitle:()=> <Mudei/> }}/>
           
                 <Stack.Screen name="NovaVacina" component={NovaVacina} 
                 options={{headerStyle:{backgroundColor:'#C1E7E3'}, headerTitle:()=> <Nova/> }}/>

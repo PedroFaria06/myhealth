@@ -1,9 +1,11 @@
 import {StyleSheet, View, Text, Image, ImageBackground, TextInput, TouchableOpacity} from 'react-native'
 import { useState } from 'react'
+import {RadioButton} from 'react-native-paper'
 
 const CriarConta = () =>{
 
     const [nome, setNome] = useState('')
+    const [sexo, setSexo] = useState('')
     const [data, setData] = useState('')
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
@@ -16,9 +18,33 @@ const CriarConta = () =>{
                     <Text style={estilos.textos}>Nome completo</Text>
                     <TextInput style={estilos.inputs} value={nome} onChangeText={setNome}/>
                 </View>
+
                 <View style={estilos.sexo}>
                     <Text style={estilos.textos}>Sexo</Text>
+                    <View style={estilos.telaRadio}>
+                    <View style={estilos.telaSexo}>
+                            <RadioButton
+                                value="Masculino"
+                                color="#419ed7"
+                                uncheckedColor="#fff"
+                                status={sexo === 'Masculino' ? 'checked' : 'unchecked'}
+                                onPress={() => setSexo('Masculino')}
+                            />
+                            <Text style={estilos.textosSexo}>Masculino</Text>
+                        </View>
+                        <View style={estilos.telaSexo}>
+                            <RadioButton
+                                value="Feminino"
+                                color="#419ed7"
+                                uncheckedColor="#fff"
+                                status={sexo === 'Feminino' ? 'checked' : 'unchecked'}
+                                onPress={() => setSexo('Feminino')}
+                            />
+                            <Text style={estilos.textosSexo}>Feminino</Text>
+                        </View>
+                    </View>
                 </View>
+
                 <View style={estilos.data}>
                     <Text style={estilos.textos}>Data nascimento</Text>
                     <TextInput style={estilos.inputs} value={data} onChangeText={setData}/>
@@ -59,7 +85,10 @@ const estilos = StyleSheet.create({
     },
     sexo:{
         flexDirection: 'row',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems:'center', 
+        marginRight:20,
+        paddingLeft:105,
     },
     data:{
         flexDirection: 'row',
@@ -107,6 +136,19 @@ const estilos = StyleSheet.create({
     textos:{
         color:'white',
         
+    },
+    telaRadio: {
+        width: '100%',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+    },
+    telaSexo: {
+        flexDirection: 'row',
+        alignItems:'center'
+    },
+    textosSexo:{
+        color:'white',
+        fontSize:12
     }
 })
 export default CriarConta
